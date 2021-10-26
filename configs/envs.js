@@ -1,3 +1,0 @@
-const APOLLO_CLIENT_URI = process.env.REACT_APP_APOLLO_CLIENT_URI
-
-export { APOLLO_CLIENT_URI }
