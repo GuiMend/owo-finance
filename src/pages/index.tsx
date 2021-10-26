@@ -5,9 +5,12 @@ import { gql } from '@apollo/client'
 import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
+import dynamic from 'next/dynamic'
 
 import client from 'apollo/client'
 import styles from 'styles/Home.module.css'
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const Home: NextPage = ({ countries }: any) => {
   const { t } = useTranslation('common')
@@ -32,6 +35,28 @@ const Home: NextPage = ({ countries }: any) => {
         <Link href="/client-side">
           <a>client side</a>
         </Link>
+
+        <Chart
+          options={{
+            chart: {
+              id: 'apexchart-example',
+            },
+            xaxis: {
+              categories: [
+                1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+              ],
+            },
+          }}
+          series={[
+            {
+              name: 'series-1',
+              data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+            },
+          ]}
+          type="bar"
+          width={500}
+          height={320}
+        />
 
         <div className={styles.grid}>
           {countries.map((country: any) => (
