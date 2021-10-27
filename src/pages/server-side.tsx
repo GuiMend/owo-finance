@@ -16,7 +16,6 @@ const StyledButton = styled.button`
 `
 
 const Home: NextPage = ({ countries }: any) => {
-  console.log({ countries })
   return (
     <div className={styles.container}>
       <Head>
