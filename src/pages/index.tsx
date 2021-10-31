@@ -12,6 +12,7 @@ import styles from 'styles/Home.module.css'
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Home: NextPage = ({ countries }: any) => {
   const { t } = useTranslation('common')
   return (
@@ -43,7 +44,15 @@ const Home: NextPage = ({ countries }: any) => {
             },
             xaxis: {
               categories: [
-                1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+                1991,
+                1992,
+                1993,
+                1994,
+                1995,
+                1996,
+                1997,
+                1998,
+                1999,
               ],
             },
           }}
@@ -59,6 +68,7 @@ const Home: NextPage = ({ countries }: any) => {
         />
 
         <div className={styles.grid}>
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {countries.map((country: any) => (
             <div key={country.code} className={styles.card}>
               <h3>
