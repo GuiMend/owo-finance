@@ -15,7 +15,6 @@ const QUERY = gql`
 
 const Countries = () => {
   const { data, loading, error } = useQuery(QUERY)
-  console.log({ data, loading, error })
   if (loading) {
     return (
       <h2>
@@ -45,7 +44,6 @@ const Countries = () => {
   }
 
   if (error) {
-    console.error(error)
     return null
   }
 
@@ -53,6 +51,7 @@ const Countries = () => {
 
   return (
     <div className={styles.grid}>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       {countries.map((country: any) => (
         <div key={country.code} className={styles.card}>
           <h3>

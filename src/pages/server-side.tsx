@@ -15,6 +15,7 @@ const StyledButton = styled.button`
   font-size: 20px;
 `
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Home: NextPage = ({ countries }: any) => {
   return (
     <div className={styles.container}>
@@ -40,6 +41,7 @@ const Home: NextPage = ({ countries }: any) => {
         <StyledButton>Emotion styled button</StyledButton>
 
         <div className={styles.grid}>
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {countries.map((country: any) => (
             <div key={country.code} className={styles.card}>
               <h3>

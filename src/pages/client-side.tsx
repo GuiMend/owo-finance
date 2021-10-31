@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import styles from 'styles/Home.module.css'
 // import ClientOnly from 'utils/ClientOnly'
@@ -46,7 +47,7 @@ export default function ClientSide() {
       <footer className={styles.footer}>
         <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
           Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <Image src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>

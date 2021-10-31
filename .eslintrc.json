@@ -19,7 +19,11 @@
     "@emotion/jsx-import": "error",
     "@emotion/no-vanilla": "error",
     "@emotion/import-from-emotion": "error",
-    "@emotion/styled-import": "error"
+    "@emotion/styled-import": "error",
+    "no-console": "error",
+    "no-unused-expressions":"error",
+    "no-unused-labels": "error",
+    "no-unused-vars": "error"
   },
   "settings": {
     "react": {

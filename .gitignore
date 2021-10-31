@@ -32,3 +32,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# PWA auto generated files
+sw.*
+workbox*.*
