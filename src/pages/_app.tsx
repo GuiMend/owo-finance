@@ -1,16 +1,14 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
-import { ThemeProvider } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { ApolloProvider } from '@apollo/client'
-import { appWithTranslation } from 'next-i18next'
-import { useTranslation } from 'next-i18next'
+import { appWithTranslation, useTranslation } from 'next-i18next'
 
+import ColorModeContextProvider from 'context/ColorModeContext'
+import DrawerContextProvider from 'context/DrawerContext'
 import createEmotionCache from 'lib/createEmotionCache'
 import client from 'apollo/client'
-import theme from 'theme'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -42,11 +40,11 @@ const App = (props: MyAppProps) => {
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/favicon.ico"></link>
         </Head>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <ColorModeContextProvider>
+          <DrawerContextProvider>
+            <Component {...pageProps} />
+          </DrawerContextProvider>
+        </ColorModeContextProvider>
       </ApolloProvider>
     </CacheProvider>
   )

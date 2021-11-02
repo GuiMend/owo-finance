@@ -5,7 +5,7 @@ const withClientOnlyRender = <P extends object>(
 ) =>
   class WithClientOnlyRender extends React.Component<
     P,
-    { hasMounted: Boolean }
+    { hasMounted: boolean }
   > {
     constructor(props: P) {
       super(props)

@@ -1,18 +1,48 @@
-import { createTheme } from '@mui/material'
-import { red } from '@mui/material/colors'
+import { createTheme, PaletteMode } from '@mui/material'
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#556cd6',
+import themeModeSelector from 'utils/themeModeSelector'
+
+import colors from './colors'
+
+const theme = (mode: PaletteMode) =>
+  createTheme({
+    palette: {
+      mode,
+      background: {
+        default: themeModeSelector(
+          mode,
+          colors.backgroundLight,
+          colors.backgroundDark
+        ),
+      },
     },
-    secondary: {
-      main: '#19857b',
+    components: {
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            backgroundColor: themeModeSelector(
+              mode,
+              colors.backgroundLightOpaque,
+              colors.backgroundDarkOpaque
+            ),
+            backdropFilter: 'blur(6px)',
+            backgroundImage: 'none',
+            boxShadow: 'none',
+          },
+        },
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: {
+            background: themeModeSelector(
+              mode,
+              colors.backgroundLight,
+              colors.backgroundDark
+            ),
+          },
+        },
+      },
     },
-    error: {
-      main: red.A400,
-    },
-  },
-})
+  })
 
 export default theme

@@ -6,5 +6,4 @@ Resolves #
 
 ## Checklist
 
-- [ ] Update Jest storybook snapshot tests
 - [ ] Review Chromatic UI updates (approve or fix changes)
