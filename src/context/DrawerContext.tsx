@@ -26,7 +26,9 @@ const DrawerContext = createContext<IDrawerContext>({
 const DrawerContextProvider = ({ children }: IDrawerContextProvider) => {
   const { width, isDesktop } = useWindowSize()
   const prevWidth = usePrevious(width)
-  const [open, toggleOpen, setOpen] = useBoolean(false)
+  const { value: open, toggle: toggleOpen, setValue: setOpen } = useBoolean(
+    false
+  )
 
   useEffect(() => {
     if (prevWidth === undefined && width) {
