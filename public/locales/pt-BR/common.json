@@ -1,5 +1,33 @@
 {
     "app-name": "Owo Finance BR",
     "welcome": "Bem vindo à Owo finance!",
-    "not-found": "Página não encontrada! Erro 404"
+    "not-found": "Página não encontrada! Erro 404",
+    "ALL": {
+        "short": "I",
+        "long": "Desde o Início"
+    },
+    "M": {
+        "short": "M",
+        "long": "1 Mês"
+    },
+    "S": {
+        "short": "S",
+        "long": "6 Meses"
+    },
+    "Y": {
+        "short": "A",
+        "long": "12 Meses"
+    },
+    "TM": {
+        "short": "NM",
+        "long": "No Mês" 
+    },
+    "TS": {
+        "short": "NS",
+        "long": "No Semestre"
+    },
+    "TY": {
+        "short": "NA",
+        "long": "No Ano"
+    }
 }
