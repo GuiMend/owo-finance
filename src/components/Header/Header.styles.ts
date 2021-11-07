@@ -4,6 +4,8 @@ import {
   AppBarProps as MuiAppBarProps,
 } from '@mui/material'
 
+import themeModeSelector from 'utils/themeModeSelector'
+import colors from 'theme/colors'
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean
 }
@@ -34,4 +36,22 @@ export const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
+}))
+
+export const EmptySpace = styled('div')(() => ({
+  flexGrow: 1,
+}))
+
+export const CalendarWrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'end',
+  gap: theme.spacing(1),
+  justifyContent: 'center',
+  padding: theme.spacing(1),
+  borderRadius: theme.shape.borderRadius,
+  border: `2px solid ${themeModeSelector(
+    theme.palette.mode,
+    colors.backgroundDarkTransparent,
+    colors.backgroundLightTransparent
+  )}`,
 }))
