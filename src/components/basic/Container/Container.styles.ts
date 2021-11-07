@@ -10,17 +10,19 @@ interface ContainerProps extends MuiContainerProps {
   component?: string
   hasHeader?: boolean
   open?: boolean
+  isDesktop?: boolean
 }
 
 const Container = styled(MuiContainer)<ContainerProps>(
-  ({ theme, hasHeader = false, open }) => ({
+  ({ theme, hasHeader, open, isDesktop }) => ({
     ...(hasHeader && { paddingTop: theme.spacing(14) }),
-    ...(open && {
-      marginLeft: drawerWidth,
-      '&': {
-        maxWidth: `calc(100% - ${drawerWidth}px)`,
-      },
-    }),
+    ...(open &&
+      isDesktop && {
+        marginLeft: drawerWidth,
+        '&': {
+          maxWidth: `calc(100% - ${drawerWidth}px)`,
+        },
+      }),
   })
 )
 
