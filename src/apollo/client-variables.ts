@@ -4,10 +4,8 @@ import { makeVar } from '@apollo/client'
 export enum InvestmentViewPeriods {
   ALL = 'ALL',
   M = 'M',
-  S = 'S',
   Y = 'Y',
   TM = 'TM',
-  TS = 'TS',
   TY = 'TY',
 }
 

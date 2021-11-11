@@ -15,6 +15,9 @@ interface ContainerProps extends MuiContainerProps {
 
 const Container = styled(MuiContainer)<ContainerProps>(
   ({ theme, hasHeader, open, isDesktop }) => ({
+    '&': {
+      maxWidth: `max(80vw, 1200px)`,
+    },
     ...(hasHeader && { paddingTop: theme.spacing(14) }),
     ...(open &&
       isDesktop && {

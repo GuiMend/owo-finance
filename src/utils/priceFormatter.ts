@@ -4,9 +4,9 @@ export const CURRENCY: { [index: string]: string } = {
 }
 
 const priceFormatter = (price: number, locale = 'pt-BR') =>
-  new Intl.NumberFormat(locale, {
+  Intl.NumberFormat(locale, {
     style: 'currency',
     currency: CURRENCY[locale],
-  }).format(price)
+  }).format(Number(price.toFixed(2)))
 
 export default priceFormatter
