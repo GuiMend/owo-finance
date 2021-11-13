@@ -9,4 +9,4 @@ export enum InvestmentViewPeriods {
   TY = 'TY',
 }
 
-export const investmentViewPeriodVar = makeVar(InvestmentViewPeriods.ALL)
+export const investmentViewPeriodVar = makeVar(InvestmentViewPeriods.TM)
