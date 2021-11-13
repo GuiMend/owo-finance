@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next'
 
 import { investmentViewPeriodVar } from 'apollo/client-variables'
 import StatsCard, { StatsType } from 'components/Cards/Stats'
+import { useUsdBrl } from 'context/CurrencyExchangeContext'
+import DisplayCard from 'components/Cards/Display'
 import Container from 'components/basic/Container'
 import { useDrawer } from 'context/DrawerContext'
 import useWindowSize from 'hooks/useWindowSize'
@@ -15,6 +17,7 @@ import Header from 'components/Header'
 
 const Home: NextPage = () => {
   const investmentViewPeriod = useReactiveVar(investmentViewPeriodVar)
+  const { usdBrl, loadingExchange } = useUsdBrl()
   const { t } = useTranslation('common')
   const { isDesktop } = useWindowSize()
   const { open } = useDrawer()
@@ -44,6 +47,13 @@ const Home: NextPage = () => {
       <Header />
       <Container component="main" hasHeader open={open} isDesktop={isDesktop}>
         <Grid container spacing={2}>
+          <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'end' }}>
+            <DisplayCard
+              title={t('usdbrl')}
+              description={`$1 = R$${usdBrl}`}
+              loading={loadingExchange}
+            />
+          </Grid>
           <Grid item xs={12}>
             <StatsCard
               title={t('net-worth')}

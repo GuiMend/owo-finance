@@ -5,6 +5,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import { ApolloProvider } from '@apollo/client'
 import { appWithTranslation, useTranslation } from 'next-i18next'
 
+import CurrencyExchangeProvider from 'context/CurrencyExchangeContext'
 import ColorModeContextProvider from 'context/ColorModeContext'
 import DrawerContextProvider from 'context/DrawerContext'
 import createEmotionCache from 'lib/createEmotionCache'
@@ -42,7 +43,9 @@ const App = (props: MyAppProps) => {
         </Head>
         <ColorModeContextProvider>
           <DrawerContextProvider>
-            <Component {...pageProps} />
+            <CurrencyExchangeProvider>
+              <Component {...pageProps} />
+            </CurrencyExchangeProvider>
           </DrawerContextProvider>
         </ColorModeContextProvider>
       </ApolloProvider>

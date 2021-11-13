@@ -12,6 +12,7 @@ import priceFormatter from 'utils/priceFormatter'
 
 import { InfoWrapper, ChartWrapper, CardContent } from './StatsCard.styles'
 import MinimalistChart from 'components/basic/Charts/MinimalistChart'
+import { useUsdBrl } from 'context/CurrencyExchangeContext'
 
 export type StatsCardType = InferProps<typeof StatsCardPropTypes>
 export enum StatsType {
@@ -29,6 +30,7 @@ const StatsCard = ({
   categories,
   series,
 }: StatsCardType) => {
+  const { usdBrl } = useUsdBrl()
   const { t } = useTranslation(['stats-card', 'common'])
   const investmentViewPeriod = useReactiveVar(investmentViewPeriodVar)
   const { locale } = useRouter()
@@ -74,7 +76,7 @@ const StatsCard = ({
 
   const formatValue = (val: number) => ({
     [StatsType.number]: val.toFixed(2),
-    [StatsType.currency]: priceFormatter(val, locale),
+    [StatsType.currency]: priceFormatter(val, locale, usdBrl),
   })
 
   return (
@@ -85,7 +87,7 @@ const StatsCard = ({
             {title}
           </Typography>
           <div>
-            <Typography variant="h3" component="p" sx={{ marginBottom: 1 }}>
+            <Typography variant="h4" component="p" sx={{ marginBottom: 1 }}>
               {formatValue(lastValue)[type!]}
             </Typography>
             <Typography
@@ -106,6 +108,7 @@ const StatsCard = ({
         </InfoWrapper>
         <ChartWrapper>
           <MinimalistChart
+            height="150px"
             series={series}
             categories={categories}
             yFormatter={(val) => formatValue(val)[type!]}
