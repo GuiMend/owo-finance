@@ -1,0 +1,7 @@
+.chart > div > svg {
+    /* Need to override inline style, in some instances refreshes the
+       background-color was different than transparent (don't know why)
+       This way I assure it always is transparent.
+     */
+    background: transparent !important; 
+}

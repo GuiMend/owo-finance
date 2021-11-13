@@ -4,11 +4,19 @@ import dynamic from 'next/dynamic'
 import { useColorMode } from 'context/ColorModeContext'
 import formatDate from 'utils/formatDate'
 
+import styles from './MinimalistChart.module.css'
+
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 export type StatsCardType = InferProps<typeof MinimalistChartPropTypes>
 
-const MinimalistChart = ({ categories, series, yFormatter }: StatsCardType) => {
+const MinimalistChart = ({
+  categories,
+  series,
+  yFormatter,
+  width,
+  height,
+}: StatsCardType) => {
   const { mode } = useColorMode()
 
   return (
@@ -77,8 +85,9 @@ const MinimalistChart = ({ categories, series, yFormatter }: StatsCardType) => {
       }}
       series={series}
       type="area"
-      width="100%"
-      height={200}
+      width={width || '100%'}
+      height={height || 200}
+      className={styles.chart}
     />
   )
 }
@@ -92,6 +101,8 @@ const MinimalistChartPropTypes = {
   ).isRequired,
   categories: PropTypes.arrayOf(PropTypes.any).isRequired,
   yFormatter: PropTypes.func,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 MinimalistChart.propTypes = MinimalistChartPropTypes
