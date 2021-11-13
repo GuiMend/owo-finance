@@ -1,4 +1,7 @@
 const colors = {
+  secondaryLight: 'rgb(58, 73, 89)',
+  secondaryDark: 'rgb(78, 205, 196)',
+
   backgroundLight: 'rgb(255, 255, 255)',
   backgroundLightOpaque: 'rgba(255, 255, 255, 0.72)',
   backgroundLightTransparent: 'rgba(255, 255, 255, 0.12)',

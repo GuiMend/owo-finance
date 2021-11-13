@@ -6,6 +6,9 @@ import colors from './colors'
 
 declare module '@mui/material/styles' {
   interface Theme {
+    contrastText: {
+      main?: string
+    }
     success: {
       lightTransparent?: string
     }
@@ -26,6 +29,13 @@ const defaultTheme = (mode: PaletteMode) =>
           colors.backgroundDark
         ),
       },
+      secondary: {
+        main: themeModeSelector(
+          mode,
+          colors.secondaryLight,
+          colors.secondaryDark
+        ),
+      },
     },
   })
 
@@ -33,6 +43,13 @@ const theme = (mode: PaletteMode) =>
   createTheme(defaultTheme(mode), {
     shape: {
       borderRadius: 10,
+    },
+    contrastText: {
+      main: themeModeSelector(
+        mode,
+        defaultTheme(mode).palette.grey[50],
+        colors.backgroundDark
+      ),
     },
     success: {
       lightTransparent: `${defaultTheme(mode).palette.success.light}20`,
