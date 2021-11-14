@@ -1,5 +1,33 @@
 {
     "app-name": "Owo Finance BR",
     "welcome": "Bem vindo à Owo finance!",
-    "not-found": "Página não encontrada! Erro 404"
+    "not-found": "Página não encontrada! Erro 404",
+    "usdbrl": "USD / BRL",
+    "passive-income": "Proventos",
+    "net-worth": "Meu Patrimônio",
+    "total-assets": "Total de ativos",
+    "ALL": {
+        "short": "I",
+        "long": "Desde o Início",
+        "vs": "desde o início"
+    },
+    "M": {
+        "short": "M",
+        "long": "1 Mês",
+        "vs": "vs últimos 30 days"
+    },
+    "Y": {
+        "short": "A",
+        "vs": "vs últimos 12 meses"
+    },
+    "TM": {
+        "short": "NM",
+        "long": "No Mês",
+        "vs": "vs último mês"
+    },
+    "TY": {
+        "short": "NA",
+        "long": "No Ano",
+        "vs": "vs último ano"
+    }
 }

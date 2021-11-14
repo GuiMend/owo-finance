@@ -1,20 +1,21 @@
-import { useState, useCallback } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
-const useBoolean = (
-  bool: boolean
-  // eslint-disable-next-line no-unused-vars
-): [boolean, () => void, (value: boolean) => void] => {
-  const [boolean, setBool] = useState(bool)
+interface ReturnType {
+  value: boolean
+  setValue: Dispatch<SetStateAction<boolean>>
+  setTrue: () => void
+  setFalse: () => void
+  toggle: () => void
+}
 
-  const toggleBoolean = useCallback(() => {
-    setBool((prev) => !prev)
-  }, [])
+function useBoolean(defaultValue?: boolean): ReturnType {
+  const [value, setValue] = useState(!!defaultValue)
 
-  const setBoolean = useCallback((value: boolean) => {
-    setBool(value)
-  }, [])
+  const setTrue = () => setValue(true)
+  const setFalse = () => setValue(false)
+  const toggle = () => setValue((x) => !x)
 
-  return [boolean, toggleBoolean, setBoolean]
+  return { value, setValue, setTrue, setFalse, toggle }
 }
 
 export default useBoolean

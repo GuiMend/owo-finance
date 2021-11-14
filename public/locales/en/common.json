@@ -1,5 +1,34 @@
 {
     "app-name": "Owo Finance US",
     "welcome": "Welcome to Owo finance!",
-    "not-found": "Error 404. Page not found!"
+    "not-found": "Error 404. Page not found!",
+    "usdbrl": "USD / BRL",
+    "passive-income": "Passive Income",
+    "net-worth": "My Net Worth",
+    "total-assets": "Total # of Assets",
+    "ALL": {
+        "short": "ALL",
+        "long": "Since the beginning",
+        "vs": "since the beginning"
+    },
+    "M": {
+        "short": "M",
+        "long": "1 Month",
+        "vs": "vs last 30 days"
+    },
+    "Y": {
+        "short": "Y",
+        "long": "12 Months",
+        "vs": "vs last 12 months"
+    },
+    "TM": {
+        "short": "TM",
+        "long": "This Month",
+        "vs": "vs last month"
+    },
+    "TY": {
+        "short": "TY",
+        "long": "This Year",
+        "vs": "vs last year"
+    }
 }
