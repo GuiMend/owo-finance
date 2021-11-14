@@ -108,7 +108,7 @@ const StatsCard = ({
         </InfoWrapper>
         <ChartWrapper>
           <MinimalistChart
-            height="150px"
+            height={150}
             series={series}
             categories={categories}
             yFormatter={(val) => formatValue(val)[type!]}

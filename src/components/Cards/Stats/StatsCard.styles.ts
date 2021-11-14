@@ -16,5 +16,5 @@ export const InfoWrapper = styled('div')(() => ({
 }))
 
 export const ChartWrapper = styled('div')(({ theme }) => ({
-  marginBottom: theme.spacing(-2),
+  margin: theme.spacing(-2, -1, -2, -2.25),
 }))

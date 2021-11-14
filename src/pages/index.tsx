@@ -32,7 +32,7 @@ const Home: NextPage = () => {
   const series2 = [
     {
       name: t('total-assets'),
-      data: [1000, 1200, 1240, 1300, 1400, 2000],
+      data: [2870.137, 3053.83, 5197.78, 7218.117, 8439.74, 8939.72],
     },
   ]
   const series3 = [
